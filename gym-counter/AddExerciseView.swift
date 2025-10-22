@@ -34,9 +34,8 @@ struct AddExerciseView: View {
         "figure.run",                // 跑步
         "dumbbell.fill"              // 啞鈴
     ]
-
-    // MARK: - Body
     
+    // MARK: - Body
     var body: some View {
         NavigationStack {
             Form {
@@ -63,9 +62,7 @@ struct AddExerciseView: View {
         }
     }
     
-    
     // MARK: - View Components
-    
     private var basicInfoSection: some View {
         Section("基本資訊") {
             TextField("運動名稱", text: $name)
@@ -105,7 +102,6 @@ struct AddExerciseView: View {
     }
     
     // MARK: - Actions
-    
     private func saveExercise() {
         // 獲取當前所有運動的最大 sortOrder
         let descriptor = FetchDescriptor<ExerciseType>(
