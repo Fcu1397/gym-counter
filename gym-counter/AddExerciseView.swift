@@ -1,6 +1,6 @@
 //
 //  AddExerciseView.swift
-//  gym-counter
+//  GymCounter
 //
 //  新增運動畫面
 //
@@ -21,7 +21,7 @@ struct AddExerciseView: View {
     
     // MARK: - Constants
     
-    /// 常用運動圖示
+    // 常用運動圖示
     private let commonIcons = [
         "figure.arms.open",          // 伏地挺身
         "figure.flexibility",        // 深蹲
@@ -36,7 +36,6 @@ struct AddExerciseView: View {
     ]
     
     // MARK: - Body
-    
     var body: some View {
         NavigationStack {
             Form {
@@ -64,7 +63,6 @@ struct AddExerciseView: View {
     }
     
     // MARK: - View Components
-    
     private var basicInfoSection: some View {
         Section("基本資訊") {
             TextField("運動名稱", text: $name)
@@ -104,7 +102,6 @@ struct AddExerciseView: View {
     }
     
     // MARK: - Actions
-    
     private func saveExercise() {
         // 獲取當前所有運動的最大 sortOrder
         let descriptor = FetchDescriptor<ExerciseType>(
