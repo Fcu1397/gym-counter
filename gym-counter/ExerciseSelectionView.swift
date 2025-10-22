@@ -172,6 +172,124 @@ struct ExerciseCard: View {
     }
 }
 
+// MARK: - Statistics View
+
+struct StatisticsView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Query(sort: \WorkoutSession.startTime, order: .reverse) private var sessions: [WorkoutSession]
+    
+    var body: some View {
+        NavigationStack {
+            List {
+                overviewSection
+                recentSessionsSection
+            }
+            .navigationTitle("統計資料")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("完成") { dismiss() }
+                }
+            }
+        }
+    }
+    
+    // MARK: - View Components
+    
+    private var overviewSection: some View {
+        Section("總覽") {
+            StatRow(title: "總運動次數", value: "\(sessions.count)")
+            StatRow(title: "總完成次數", value: "\(totalReps)")
+            
+            if let lastSession = sessions.first {
+                StatRow(
+                    title: "最近運動",
+                    value: lastSession.startTime.formatted(date: .abbreviated, time: .shortened)
+                )
+            }
+        }
+    }
+    
+    private var recentSessionsSection: some View {
+        Section("最近記錄") {
+            if sessions.isEmpty {
+                Text("尚無運動記錄")
+                    .foregroundStyle(.secondary)
+            } else {
+                ForEach(sessions.prefix(10)) { session in
+                    SessionRow(session: session)
+                }
+            }
+        }
+    }
+    
+    // MARK: - Computed Properties
+    
+    private var totalReps: Int {
+        sessions.reduce(0) { $0 + $1.repCount }
+    }
+}
+
+// MARK: - Stat Row Component
+
+struct StatRow: View {
+    let title: String
+    let value: String
+    
+    var body: some View {
+        HStack {
+            Text(title)
+            Spacer()
+            Text(value)
+                .bold()
+                .foregroundStyle(.green)
+        }
+    }
+}
+
+// MARK: - Session Row Component
+
+struct SessionRow: View {
+    let session: WorkoutSession
+    
+    var body: some View {
+        HStack {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(session.exerciseType?.name ?? "未知運動")
+                    .font(.headline)
+                
+                Text(session.startTime.formatted(date: .abbreviated, time: .shortened))
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                
+                if let duration = session.endTime?.timeIntervalSince(session.startTime) {
+                    Text("時長: \(formatDuration(duration))")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                }
+            }
+            
+            Spacer()
+            
+            VStack(alignment: .trailing) {
+                Text("\(session.repCount)")
+                    .font(.title3.bold())
+                    .foregroundStyle(.green)
+                
+                Text("次")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+    
+    private func formatDuration(_ duration: TimeInterval) -> String {
+        let minutes = Int(duration) / 60
+        let seconds = Int(duration) % 60
+        return String(format: "%d:%02d", minutes, seconds)
+    }
+}
 
 // MARK: - Preview
 
