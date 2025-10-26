@@ -6,14 +6,66 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		2DDCE3142EAE0D20007B65B8 /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDCE3132EAE0D20007B65B8 /* WidgetKit.framework */; };
+		2DDCE3162EAE0D20007B65B8 /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2DDCE3152EAE0D20007B65B8 /* SwiftUI.framework */; };
+		2DDCE3252EAE0D21007B65B8 /* gym-counterWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 2DDCE3112EAE0D20007B65B8 /* gym-counterWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2DDCE3232EAE0D21007B65B8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2D18B87C2EA4D3600062B29D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2DDCE3102EAE0D20007B65B8;
+			remoteInfo = "gym-counterWidgetExtensionExtension";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2DDCE3262EAE0D21007B65B8 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				2DDCE3252EAE0D21007B65B8 /* gym-counterWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		2D18B8842EA4D3600062B29D /* gym-counter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "gym-counter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DDCE3112EAE0D20007B65B8 /* gym-counterWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "gym-counterWidgetExtension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DDCE3132EAE0D20007B65B8 /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		2DDCE3152EAE0D20007B65B8 /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		2DDCE32C2EAE0DEF007B65B8 /* gym-counterWidgetExtensionExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "gym-counterWidgetExtensionExtension.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2DDCE3292EAE0D21007B65B8 /* Exceptions for "gym-counterWidget" folder in "gym-counterWidgetExtension" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2DDCE3102EAE0D20007B65B8 /* gym-counterWidgetExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2D18B8862EA4D3600062B29D /* gym-counter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = "gym-counter";
+			sourceTree = "<group>";
+		};
+		2DDCE3172EAE0D20007B65B8 /* gym-counterWidget */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2DDCE3292EAE0D21007B65B8 /* Exceptions for "gym-counterWidget" folder in "gym-counterWidgetExtension" target */,
+			);
+			path = "gym-counterWidget";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -26,13 +78,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DDCE30E2EAE0D20007B65B8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2DDCE3162EAE0D20007B65B8 /* SwiftUI.framework in Frameworks */,
+				2DDCE3142EAE0D20007B65B8 /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		2D18B87B2EA4D3600062B29D = {
 			isa = PBXGroup;
 			children = (
+				2DDCE32C2EAE0DEF007B65B8 /* gym-counterWidgetExtensionExtension.entitlements */,
 				2D18B8862EA4D3600062B29D /* gym-counter */,
+				2DDCE3172EAE0D20007B65B8 /* gym-counterWidget */,
+				2DDCE3122EAE0D20007B65B8 /* Frameworks */,
 				2D18B8852EA4D3600062B29D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -41,8 +105,18 @@
 			isa = PBXGroup;
 			children = (
 				2D18B8842EA4D3600062B29D /* gym-counter.app */,
+				2DDCE3112EAE0D20007B65B8 /* gym-counterWidgetExtension.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		2DDCE3122EAE0D20007B65B8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2DDCE3132EAE0D20007B65B8 /* WidgetKit.framework */,
+				2DDCE3152EAE0D20007B65B8 /* SwiftUI.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -55,10 +129,12 @@
 				2D18B8802EA4D3600062B29D /* Sources */,
 				2D18B8812EA4D3600062B29D /* Frameworks */,
 				2D18B8822EA4D3600062B29D /* Resources */,
+				2DDCE3262EAE0D21007B65B8 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				2DDCE3242EAE0D21007B65B8 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				2D18B8862EA4D3600062B29D /* gym-counter */,
@@ -69,6 +145,28 @@
 			productName = "gym-counter";
 			productReference = 2D18B8842EA4D3600062B29D /* gym-counter.app */;
 			productType = "com.apple.product-type.application";
+		};
+		2DDCE3102EAE0D20007B65B8 /* gym-counterWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2DDCE32A2EAE0D21007B65B8 /* Build configuration list for PBXNativeTarget "gym-counterWidgetExtension" */;
+			buildPhases = (
+				2DDCE30D2EAE0D20007B65B8 /* Sources */,
+				2DDCE30E2EAE0D20007B65B8 /* Frameworks */,
+				2DDCE30F2EAE0D20007B65B8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2DDCE3172EAE0D20007B65B8 /* gym-counterWidget */,
+			);
+			name = "gym-counterWidgetExtension";
+			packageProductDependencies = (
+			);
+			productName = "gym-counterWidgetExtensionExtension";
+			productReference = 2DDCE3112EAE0D20007B65B8 /* gym-counterWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -81,6 +179,9 @@
 				LastUpgradeCheck = 2600;
 				TargetAttributes = {
 					2D18B8832EA4D3600062B29D = {
+						CreatedOnToolsVersion = 26.0.1;
+					};
+					2DDCE3102EAE0D20007B65B8 = {
 						CreatedOnToolsVersion = 26.0.1;
 					};
 				};
@@ -100,12 +201,20 @@
 			projectRoot = "";
 			targets = (
 				2D18B8832EA4D3600062B29D /* gym-counter */,
+				2DDCE3102EAE0D20007B65B8 /* gym-counterWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2D18B8822EA4D3600062B29D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2DDCE30F2EAE0D20007B65B8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -122,7 +231,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2DDCE30D2EAE0D20007B65B8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2DDCE3242EAE0D21007B65B8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2DDCE3102EAE0D20007B65B8 /* gym-counterWidgetExtension */;
+			targetProxy = 2DDCE3232EAE0D21007B65B8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		2D18B88F2EA4D3600062B29D /* Debug */ = {
@@ -236,7 +360,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 26.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -251,9 +375,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "gym-counter/gym-counter.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77GUV2264S;
+				DEVELOPMENT_TEAM = 74DPLYJLR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -284,9 +409,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "gym-counter/gym-counter.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 77GUV2264S;
+				DEVELOPMENT_TEAM = 74DPLYJLR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -312,6 +438,70 @@
 			};
 			name = Release;
 		};
+		2DDCE3272EAE0D21007B65B8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "gym-counterWidgetExtensionExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74DPLYJLR4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gym-counterWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "gym-counterWidgetExtension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buildwithashton.gym-counter.gym-counterWidgetExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2DDCE3282EAE0D21007B65B8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "gym-counterWidgetExtensionExtension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74DPLYJLR4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gym-counterWidget/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "gym-counterWidgetExtension";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.buildwithashton.gym-counter.gym-counterWidgetExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -329,6 +519,15 @@
 			buildConfigurations = (
 				2D18B8922EA4D3600062B29D /* Debug */,
 				2D18B8932EA4D3600062B29D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2DDCE32A2EAE0D21007B65B8 /* Build configuration list for PBXNativeTarget "gym-counterWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2DDCE3272EAE0D21007B65B8 /* Debug */,
+				2DDCE3282EAE0D21007B65B8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

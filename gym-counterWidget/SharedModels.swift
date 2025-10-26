@@ -1,7 +1,10 @@
 //
-//  DataModels.swift
-//  gym-counter
+//  SharedModels.swift
+//  gym-counterWidget
 //
+//  共享數據模型 - 讓 Widget 可以讀取主應用程式的資料
+//
+
 import Foundation
 import SwiftData
 
@@ -150,70 +153,5 @@ final class WorkoutSession {
         guard repCount > 0 else { return false }
         guard let endTime, endTime > startTime else { return false }
         return true
-    }
-}
-
-// MARK: - Sample Data (用於 Preview 和測試)
-
-extension ExerciseType {
-    /// 預設運動類型範例
-    static var sampleExercises: [ExerciseType] {
-        [
-            ExerciseType(name: "伏地挺身", icon: "figure.arms.open", targetMuscle: "胸肌、三頭肌", sortOrder: 1),
-            ExerciseType(name: "深蹲", icon: "figure.flexibility", targetMuscle: "腿部、臀部", sortOrder: 2),
-            ExerciseType(name: "仰臥起坐", icon: "figure.core.training", targetMuscle: "腹肌", sortOrder: 3),
-            ExerciseType(name: "引體向上", icon: "figure.climbing", targetMuscle: "背肌、二頭肌", sortOrder: 4),
-            ExerciseType(name: "平板支撐", icon: "figure.mind.and.body", targetMuscle: "核心肌群", sortOrder: 5)
-        ]
-    }
-    
-    /// 創建範例實例
-    static func sample(name: String = "伏地挺身") -> ExerciseType {
-        ExerciseType(name: name, icon: "figure.arms.open", targetMuscle: "胸肌")
-    }
-}
-
-extension WorkoutSession {
-    /// 創建範例實例
-    static func sample(repCount: Int = 20, exercise: ExerciseType? = nil) -> WorkoutSession {
-        let session = WorkoutSession(
-            startTime: Date.now.addingTimeInterval(-600), // 10 分鐘前
-            repCount: repCount
-        )
-        session.endTime = Date.now
-        session.exerciseType = exercise ?? ExerciseType.sample()
-        session.isCompleted = true
-        return session
-    }
-}
-
-// MARK: - Extensions for Query and Sorting
-
-extension ExerciseType {
-    /// 按排序順序排序
-    static var sortedByOrder: SortDescriptor<ExerciseType> {
-        SortDescriptor(\.sortOrder)
-    }
-    
-    /// 按名稱排序
-    static var sortedByName: SortDescriptor<ExerciseType> {
-        SortDescriptor(\.name)
-    }
-    
-    /// 按創建時間排序
-    static var sortedByCreatedDate: SortDescriptor<ExerciseType> {
-        SortDescriptor(\.createdAt, order: .reverse)
-    }
-}
-
-extension WorkoutSession {
-    /// 按時間排序 (最新優先)
-    static var sortedByDate: SortDescriptor<WorkoutSession> {
-        SortDescriptor(\.startTime, order: .reverse)
-    }
-    
-    /// 按次數排序 (最多優先)
-    static var sortedByReps: SortDescriptor<WorkoutSession> {
-        SortDescriptor(\.repCount, order: .reverse)
     }
 }

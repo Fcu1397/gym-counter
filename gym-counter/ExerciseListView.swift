@@ -30,8 +30,7 @@ struct ExerciseListView: View {
             .navigationTitle("選擇運動")
             .navigationDestination(for: ExerciseType.self) { exercise in
                 // 這裡定義了點擊連結後要跳轉到的畫面
-                // 以下這行先註解掉，有問題執行不過
-                // ContentView(exerciseType: exercise)
+                ContentView(exerciseType: exercise)
             }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

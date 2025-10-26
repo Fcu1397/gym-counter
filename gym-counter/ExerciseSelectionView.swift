@@ -1,8 +1,6 @@
 //
 //  ExerciseSelectionView.swift
-//  GymCounter
-//
-//  運動選擇主畫面 - 顯示所有運動類型供使用者選擇
+//  gym-counter
 //
 import SwiftUI
 import SwiftData
@@ -41,6 +39,7 @@ struct ExerciseSelectionView: View {
                 AddExerciseView()
             }
             .sheet(isPresented: $showingStatistics) {
+                StatisticsView()
             }
         }
     }
@@ -75,7 +74,7 @@ struct ExerciseSelectionView: View {
         ScrollView {
             LazyVStack(spacing: 16) {
                 ForEach(exercises) { exercise in
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: ContentView(exerciseType: exercise)) {
                         ExerciseCard(exercise: exercise)
                     }
                     .buttonStyle(.plain)
