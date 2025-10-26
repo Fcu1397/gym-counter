@@ -179,6 +179,7 @@ struct SmallWidgetView: View {
                 .foregroundStyle(.secondary)
         }
         .containerBackground(.fill.tertiary, for: .widget)
+        .widgetURL(URL(string: "gymcounter://stats"))
     }
 }
 
@@ -213,6 +214,7 @@ struct MediumWidgetView: View {
         }
         .padding()
         .containerBackground(.fill.tertiary, for: .widget)
+        .widgetURL(URL(string: "gymcounter://stats"))
     }
 }
 
@@ -272,6 +274,7 @@ struct LargeWidgetView: View {
         }
         .padding()
         .containerBackground(.fill.tertiary, for: .widget)
+        .widgetURL(URL(string: "gymcounter://stats"))
     }
 }
 

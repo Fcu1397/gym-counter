@@ -45,6 +45,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2D3F984B2EAE1CDC00FF0869 /* Exceptions for "gym-counter" folder in "gym-counter" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2D18B8832EA4D3600062B29D /* gym-counter */;
+		};
 		2DDCE3292EAE0D21007B65B8 /* Exceptions for "gym-counterWidget" folder in "gym-counterWidgetExtension" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
@@ -57,6 +64,9 @@
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2D18B8862EA4D3600062B29D /* gym-counter */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2D3F984B2EAE1CDC00FF0869 /* Exceptions for "gym-counter" folder in "gym-counter" target */,
+			);
 			path = "gym-counter";
 			sourceTree = "<group>";
 		};
@@ -381,6 +391,7 @@
 				DEVELOPMENT_TEAM = 74DPLYJLR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gym-counter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -415,6 +426,7 @@
 				DEVELOPMENT_TEAM = 74DPLYJLR4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "gym-counter/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -15,8 +15,17 @@ struct ExerciseSelectionView: View {
     @Query(sort: \ExerciseType.sortOrder) private var exercises: [ExerciseType]
     
     // MARK: - State
-    @State private var showingAddExercise = false
-    @State private var showingStatistics = false
+    @Binding var showingAddExercise: Bool
+    @Binding var showingStatistics: Bool
+    
+    // 提供預設的初始化器
+    init(
+        showingAddExercise: Binding<Bool> = .constant(false),
+        showingStatistics: Binding<Bool> = .constant(false)
+    ) {
+        self._showingAddExercise = showingAddExercise
+        self._showingStatistics = showingStatistics
+    }
     
     // MARK: - Body
     

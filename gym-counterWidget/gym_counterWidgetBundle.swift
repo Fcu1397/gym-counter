@@ -9,6 +9,11 @@ import SwiftUI
 struct GymCounterWidgetBundle: WidgetBundle {
     var body: some Widget {
         gym_counterWidget()
+        QuickStartWidget()
+        DailyGoalWidget()
+        StatsTextWidget()
+        AddExerciseWidget()
+        StatisticsWidget()
     }
 }
 
