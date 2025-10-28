@@ -2,8 +2,6 @@
 //  AppIntent.swift
 //  gym-counterWidgetExtension
 //
-//  Created by ChienFan Chien on 2025/10/26.
-//
 
 import WidgetKit
 import AppIntents
